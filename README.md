@@ -1,0 +1,2 @@
+# react-clicky-game
+A Memory game built with React, it will Render different images to the screen each of which listen for click events. The app tracks the user's score which is incremented upon clicking an image for the first time and reset to 0 if they click the same image more than once. After each click the images rendered to the page reshuffle themselves into a random new order. After an incorrect guess the score resets and the game is restarted. 
