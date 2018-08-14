@@ -1,31 +1,33 @@
+import React from "react";
 
+const Nav = () => (
 
-
-
-
-<nav class="level is-mobile">
-  <div class="level-item has-text-centered">
-    <div>
-      <p class="heading">Tweets</p>
-      <p class="title">3,456</p>
+  <nav className="level is-mobile">
+    <div className="level-item has-text-centered">
+      <div>
+        {/* <p className="heading">Tweets</p> */}
+        <p className="title">Clicky Game</p>
+      </div>
     </div>
-  </div>
-  <div class="level-item has-text-centered">
-    <div>
-      <p class="heading">Following</p>
-      <p class="title">123</p>
+    <div className="level-item has-text-centered">
+      <div>
+        <p className="heading">Click an image to begin!</p>
+        {/* <p className="title">123</p> */}
+      </div>
     </div>
-  </div>
-  <div class="level-item has-text-centered">
-    <div>
-      <p class="heading">Followers</p>
-      <p class="title">456K</p>
+    <div className="level-item has-text-centered">
+      <div>
+        <p className="heading">Score: 0 |</p>
+        <p className="title">Top Score: 0</p>
+      </div>
     </div>
-  </div>
-  <div class="level-item has-text-centered">
-    <div>
-      <p class="heading">Likes</p>
-      <p class="title">789</p>
-    </div>
-  </div>
-</nav>
+    {/* <div className="level-item has-text-centered">
+      <div>
+        <p className="heading">Likes</p>
+        <p className="title">789</p>
+      </div>
+    </div> */}
+  </nav>
+);
+
+export default Nav;
