@@ -1,4 +1,5 @@
 import React from "react";
+import "./Nav.css";
 
 const Nav = () => (
 
@@ -11,14 +12,14 @@ const Nav = () => (
     </div>
     <div className="level-item has-text-centered">
       <div>
-        <p className="heading">Click an image to begin!</p>
+        <p className="heading headInstructions">Click an image to begin!</p>
         {/* <p className="title">123</p> */}
       </div>
     </div>
     <div className="level-item has-text-centered">
       <div>
-        <p className="heading">Score: 0 |</p>
-        <p className="title">Top Score: 0</p>
+        {/* <p className="heading"></p> */}
+        <p className="title">Score: 0 | Top Score: 0</p>
       </div>
     </div>
     {/* <div className="level-item has-text-centered">

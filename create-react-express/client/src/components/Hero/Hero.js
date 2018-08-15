@@ -1,13 +1,13 @@
 import React from "react";
 
 const Hero = props => (
-  <section class="hero is-info is-large">
-    <div class="hero-body">
-      <div class="container">
-        <h1 class="title">
+  <section className="hero is-info is-medium is-bold">
+    <div className="hero-body">
+      <div className="container">
+        <h1 className="title">
           Clicky Game
         </h1>
-        <h2 class="subtitle">
+        <h2 className="subtitle">
           Click on an image to earn points, but don't click on any image more than once!
         </h2>
       </div>

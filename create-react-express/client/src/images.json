@@ -153,5 +153,20 @@
     "id": 31,
     "name": "Mr. Hyde",
     "image": "https://statici.behindthevoiceactors.com/behindthevoiceactors/_img/chars/thumbs/mr-hyde-the-nightmare-before-christmas-83.7_thumb.jpg"
+  },
+  {
+    "id": 32,
+    "name": "JACKTEST",
+    "image": "./src/components/Images/jackskellington.jpeg"
+  },
+  {
+    "id": 33,
+    "name": "SALLYTEST",
+    "image": "./components/Images/sally.jpeg"
+  },
+  {
+    "id": 34,
+    "name": "MAYORTEST",
+    "image": "./components/Images/mayor.jpeg"
   }
 ]
