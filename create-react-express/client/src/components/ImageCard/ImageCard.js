@@ -1,9 +1,10 @@
 import React from "react";
-import PreloadImage from 'react-preload-image';
+// import {Columns} from "../Layout";
+// import PreloadImage from 'react-preload-image';
 import "./ImageCard.css";
 
 const ImageCard = props => (
-  <div className="img-container">
+  <div key={props.id} className="img-container" onClick ={() => props.getMatch(props.id)}>
   {/* <PreloadImage
   className="imgClass" alt={props.name}
   src={props.image}

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Nav.css";
 
-const Nav = () => (
+const Nav = props => (
 
   <nav className="level is-mobile">
     <div className="level-item has-text-centered">
@@ -18,8 +18,8 @@ const Nav = () => (
     </div>
     <div className="level-item has-text-centered">
       <div>
-        {/* <p className="heading"></p> */}
-        <p className="title">Score: 0 | Top Score: 0</p>
+        <p className="heading">Score: {props.score} | Top Score: {props.topScore}</p>
+        <p className="title">Matches: {props.matches} | Guesses: {props.guesses}</p>
       </div>
     </div>
     {/* <div className="level-item has-text-centered">

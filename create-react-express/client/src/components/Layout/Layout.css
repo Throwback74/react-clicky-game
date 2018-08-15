@@ -2,6 +2,8 @@
   margin-left: 20% !important;
   margin-right: 20% !important;
   margin-top: 15px !important;
+  max-width: 1024px !important;
+  display: flex;
 }
 
 .column {
