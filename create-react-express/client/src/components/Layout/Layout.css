@@ -9,3 +9,11 @@
 .column {
   margin-top: 8px;
 }
+
+.animated {
+  @-webkit-keyframes ${animationName} {
+    10% {-webkit-transform:translate(${Math.random() * 300}px, ${Math.random() * 300}px)} 
+    90% {-webkit-transform:translate(${Math.random() * 300}px, ${Math.random() * 300}px)}
+    100% {-webkit-transform:translate(${Math.random() * 300}px, ${Math.random() * 300}px)}
+};
+}

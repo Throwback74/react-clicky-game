@@ -18,7 +18,8 @@ class Game extends Component {
     matches: 0,
     guesses: 0,
     matchedImage: 6,
-    clickedImage: []
+    clickedImage: [],
+    animate: false
   }
 
 //   function getRandomInt (min, max) {
@@ -93,17 +94,28 @@ shuffle = (array) => {
       if(this.state.clickedImage.includes(id)) {
         this.setState({
           score: 0,
-          clickedImage: []
+          clickedImage: [],
+          animate: true
         });
+        setContainerClass(this.state.animate);
       }else {
-        
         this.setState({
           score: this.state.score + 1,
           topScore: this.state.topScore + 1,
           clickedImage:  [...this.state.clickedImage, id]
         });
         console.log(this.state.clickedImage);
+        setContainerClass(this.state.animate);
       }
+    }
+
+    setContainerClass = (animate) => {
+      if(true) {
+        let containerClass = animated;
+      }else {
+        let containerClass = static;
+      }
+      return containerClass;
     }
 
 
@@ -138,7 +150,7 @@ shuffle = (array) => {
       <Nav score= {this.state.score} topScore = {this.state.topScore} matches = {this.state.matches}
       guesses = {this.state.guesses} />
         <Hero />
-          <Container>
+          <Container class={containerClass}>
             <div className="columns is-multiline">
               {this.state.images.map(image => (
 

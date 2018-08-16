@@ -1,7 +1,8 @@
 import React from "react";
 import "./Layout.css";
 
-export const Container = props => 
-<div className="container is-fluid">
-{props.children}
+export const Container = ({children, containerClass}) => 
+<div className={"container is-fluid " + {containerClass}}>
+{children}
 </div>;
+// className={"column " +{size}}
