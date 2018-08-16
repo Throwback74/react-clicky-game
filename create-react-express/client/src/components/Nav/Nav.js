@@ -3,7 +3,7 @@ import "./Nav.css";
 
 const Nav = props => (
 
-  <nav className="level is-mobile">
+  <nav className="navbar level is-mobile is-fixed-top">
     <div className="level-item has-text-centered">
       <div>
         {/* <p className="heading">Tweets</p> */}
@@ -18,8 +18,8 @@ const Nav = props => (
     </div>
     <div className="level-item has-text-centered">
       <div>
-        <p className="heading">Score: {props.score} | Top Score: {props.topScore}</p>
-        <p className="title">Matches: {props.matches} | Guesses: {props.guesses}</p>
+        <p className="title">Score: {props.score} | Top Score: {props.topScore}</p>
+        {/* <p className="title">Matches: {props.matches} | Guesses: {props.guesses}</p> */}
       </div>
     </div>
     {/* <div className="level-item has-text-centered">

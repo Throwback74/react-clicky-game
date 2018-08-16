@@ -78,6 +78,16 @@ shuffle = (array) => {
       });
     }
 
+//Attempting to set up a shake animation upon losing, but could not get keyframes to work properly, currently being used to fired alert to notify of loss
+    setContainerClass = (animate) => {
+      if(animate) {
+        var containerClass = "animated";
+        alert("You Lose...Try Again!");
+      }else {
+        containerClass = "staticClass";
+      }
+      return containerClass;
+    }
     
     // const userPrivileges = ['user', 'user', 'user', 'admin'];
     // const containsAdmin = userPrivileges.some( element => element === 'admin');
@@ -88,6 +98,7 @@ shuffle = (array) => {
       var displayArray = this.displayArr(images);
       this.setState({
         images: displayArray,
+        animate: false
         // clickedImage: this.state.clickedImage.push(id)
       });
       console.log(typeof(this.state.clickedImage));
@@ -97,27 +108,24 @@ shuffle = (array) => {
           clickedImage: [],
           animate: true
         });
-        setContainerClass(this.state.animate);
+        this.setContainerClass(this.state.animate);
       }else {
-        this.setState({
-          score: this.state.score + 1,
-          topScore: this.state.topScore + 1,
-          clickedImage:  [...this.state.clickedImage, id]
-        });
+        if(this.state.topScore <= this.state.score){
+          this.setState({
+            score: this.state.score + 1,
+            topScore: this.state.topScore + 1,
+            clickedImage:  [...this.state.clickedImage, id]
+          });
+        }else {
+          this.setState({
+            score: this.state.score + 1,
+            clickedImage: [...this.state.clickedImage, id]
+          });
+        }
         console.log(this.state.clickedImage);
-        setContainerClass(this.state.animate);
+        this.setContainerClass(this.state.animate);
       }
     }
-
-    setContainerClass = (animate) => {
-      if(true) {
-        let containerClass = animated;
-      }else {
-        let containerClass = static;
-      }
-      return containerClass;
-    }
-
 
     //   if (id === this.state.matchedImage) {
     //     let randID = Math.floor(Math.random() * 12) + 1;
@@ -150,7 +158,7 @@ shuffle = (array) => {
       <Nav score= {this.state.score} topScore = {this.state.topScore} matches = {this.state.matches}
       guesses = {this.state.guesses} />
         <Hero />
-          <Container class={containerClass}>
+          <Container class={this.containerClass}>
             <div className="columns is-multiline">
               {this.state.images.map(image => (
 
