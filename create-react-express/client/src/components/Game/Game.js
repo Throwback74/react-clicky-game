@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import images from "../../imagecard.json";
+// import images from "../../images.json"
 // eslint-disable-next-line
 import {Container, Columns} from "../Layout";
 import Nav from "../Nav";
@@ -17,29 +18,111 @@ class Game extends Component {
     matches: 0,
     guesses: 0,
     matchedImage: 6,
+    clickedImage: []
   }
 
 //   function getRandomInt (min, max) {
 //     return Math.floor(Math.random() * (max - min + 1)) + min;
 // }
 
-    getMatch = (id) => {
-      if (id === this.state.matchedImage) {
-        let randID = Math.floor(Math.random() * 16) + 1;
-        this.setState({
-          matches: this.state.matches + 1,
-          score: 0,
-          matchedImage: randID
-        });
-      } else {
-          this.setState({
+shuffle = (array) => {
+  var m = array.length, t, i;
 
-            score: this.state.score + 1,
-            topScore: this.state.topScore + 1,
-            guesses: this.state.guesses +1
-          });
+  // While there remain elements to shuffle…
+  while (m) {
+  // Pick a remaining element…
+    i = Math.floor(Math.random() * m--);
+  //     // And swap it with the current element.
+    t = array[m];
+    array[m] = array[i];
+    array[i] = t;
+  }
+
+  return array;
+}
+
+// function shuffle(array) {
+//   var m = array.length, t, i;
+
+//   // While there remain elements to shuffle…
+//   while (m) {
+
+//     // Pick a remaining element…
+//     i = Math.floor(Math.random() * m--);
+
+//     // And swap it with the current element.
+//     t = array[m];
+//     array[m] = array[i];
+//     array[i] = t;
+//   }
+
+//   return array;
+// }
+
+    displayArr = (images) => {
+      var displayArray = [];
+      displayArray = images.slice(0, 12);
+      // var first = images[14];
+      // displayArray = [first, ...images];
+      console.log(displayArray);
+      return displayArray;
+    }
+
+    componentDidMount() {
+      this.displayArr(images);
+      var displayArray = this.displayArr(images);
+      console.log("success");
+      this.setState({
+        images: displayArray
+      });
+    }
+
+    
+    // const userPrivileges = ['user', 'user', 'user', 'admin'];
+    // const containsAdmin = userPrivileges.some( element => element === 'admin');
+
+    getMatch = (id) => {
+      this.shuffle(images);
+      this.displayArr(images);
+      var displayArray = this.displayArr(images);
+      this.setState({
+        images: displayArray,
+        // clickedImage: this.state.clickedImage.push(id)
+      });
+      console.log(typeof(this.state.clickedImage));
+      if(this.state.clickedImage.includes(id)) {
+        this.setState({
+          score: 0,
+          clickedImage: []
+        });
+      }else {
+        
+        this.setState({
+          score: this.state.score + 1,
+          topScore: this.state.topScore + 1,
+          clickedImage:  [...this.state.clickedImage, id]
+        });
+        console.log(this.state.clickedImage);
       }
     }
+
+
+    //   if (id === this.state.matchedImage) {
+    //     let randID = Math.floor(Math.random() * 12) + 1;
+    //     this.setState({
+    //       matches: this.state.matches + 1,
+    //       score: 0,
+    //       matchedImage: randID
+    //     });
+    //   } else {
+    //       this.setState({
+
+    //         score: this.state.score + 1,
+    //         topScore: this.state.topScore + 1,
+    //         guesses: this.state.guesses +1
+    //       });
+    //   }
+    // }
 
   // setLayout = ({id, min, max}) => {
   //   let position = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -56,8 +139,18 @@ class Game extends Component {
       guesses = {this.state.guesses} />
         <Hero />
           <Container>
-            <div className="columns">
-            <Columns size="is-one-quarter">
+            <div className="columns is-multiline">
+              {this.state.images.map(image => (
+
+                <ImageCard
+                  key={image.id}
+                  id={image.id}
+                  name={image.name}
+                  image={image.image}
+                  getMatch={this.getMatch}
+                />
+              ))}
+            {/* <Columns size="is-one-quarter">
                 <ImageCard
                   key = {images[0].id}
                   id = {images[0].id}
@@ -176,7 +269,7 @@ class Game extends Component {
                   image = {images[15].image}
                   getMatch = {this.getMatch}
                 />
-              </Columns>
+              </Columns> */}
             </div>
           </Container>
       
