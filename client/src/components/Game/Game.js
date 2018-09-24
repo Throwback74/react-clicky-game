@@ -56,19 +56,19 @@ shuffle = (array) => {
     }
 
 //Attempting to set up a shake animation upon losing, but could not get it to fire upon loss, it fires when the user clicks the first time after the loss
-    setContainerClass = (animate) => {
-      if(animate) {
-        this.setState({
-          classes: "container is-fluid animated"
-        });
-        // alert("You Lose...Try Again!");
-      }
-      else {
-        this.setState({
-          classes: "container is-fluid"
-        });
-      }
-    }
+    // setContainerClass = (animate) => {
+    //   if(animate) {
+    //     this.setState({
+    //       classes: "container is-fluid animated"
+    //     });
+    //     // alert("You Lose...Try Again!");
+    //   }
+    //   else {
+    //     this.setState({
+    //       classes: "container is-fluid"
+    //     });
+    //   }
+    // }
     
 
     setStateChange = (id) => {
@@ -76,15 +76,19 @@ shuffle = (array) => {
           animate: true
         });
       // }
-      this.setContainerClass(this.state.animate)
+      // this.setContainerClass(this.state.animate)
           this.setState({
             score: 0,
             clickedImage: [],
             animate: true,
-            classes: this.setContainerClass(this.state.animate)
+            // classes: this.setContainerClass(this.state.animate)
           });
           
     }
+
+
+
+
 
     getMatch = (id) => {
       this.shuffle(images);
@@ -104,18 +108,18 @@ shuffle = (array) => {
             topScore: this.state.topScore + 1,
             clickedImage:  [...this.state.clickedImage, id],
             animate: false,
-            classes: this.setContainerClass(this.state.animate)
+            // classes: this.setContainerClass(this.state.animate)
           });
         }else {
           this.setState({
             score: this.state.score + 1,
             clickedImage: [...this.state.clickedImage, id],
             animate: false,
-            classes: this.setContainerClass(this.state.animate)
+            // classes: this.setContainerClass(this.state.animate)
           });
         }
         console.log(this.state.clickedImage);
-        this.setContainerClass(this.state.animate);
+        // this.setContainerClass(this.state.animate);
       }
     }
 
@@ -126,13 +130,13 @@ shuffle = (array) => {
       <Nav score= {this.state.score} topScore = {this.state.topScore} matches = {this.state.matches}
       guesses = {this.state.guesses} />
         <Hero />
-          <Container classState={this.state.classes}>
+          <Container shake={!this.state.score && this.state.topScore} classState={this.state.classes}>
             <div className="columns is-multiline">
               {this.state.images.map(image => (
-
                 <ImageCard
                   key={image.id}
                   id={image.id}
+                  
                   name={image.name}
                   image={image.image}
                   getMatch={this.getMatch}

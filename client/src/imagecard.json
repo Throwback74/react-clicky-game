@@ -101,56 +101,51 @@
   },
   {
     "id": 21,
-    "name": "Sax Player",
-    "image": "/Images/sax-player.jpg"
-  },
-  {
-    "id": 22,
     "name": "Accordian Player",
     "image": "/Images/accordian-player.jpg"
   },
   {
-    "id": 23,
+    "id": 22,
     "name": "Clown w/ the Tear away Face",
     "image": "/Images/clown-WtTAW-face.jpg"
   },
   {
-    "id": 24,
+    "id": 23,
     "name": "Corpse Dad",
     "image": "/Images/corpse-dad.jpg"
   },
   {
-    "id": 25,
+    "id": 24,
     "name": "Corpse Kid",
     "image": "/Images/corpse-kid.jpg"
   },
   {
-    "id": 26,
+    "id": 25,
     "name": "Corpse Mom",
     "image": "/Images/corpse-mom.jpg"
   },
   {
-    "id": 27,
+    "id": 26,
     "name": "Devil",
     "image": "/Images/devil.jpg"
   },
   {
-    "id": 28,
+    "id": 27,
     "name": "Harlequin Demon",
     "image": "/Images/harlequin-demon.jpg"
   },
   {
-    "id": 29,
+    "id": 28,
     "name": "Man Under the Bed",
     "image": "/Images/man-under-the-bed.jpg"
   },
   {
-    "id": 30,
+    "id": 29,
     "name": "Man Under the Stairs",
     "image": "/Images/man-under-the-stairs.jpg"
   },
   {
-    "id": 31,
+    "id": 30,
     "name": "Mr. Hyde",
     "image": "/Images/mr-hyde.jpg"
   }

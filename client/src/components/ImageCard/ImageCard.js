@@ -1,6 +1,4 @@
 import React from "react";
-// import {Columns} from "../Layout";
-// import PreloadImage from 'react-preload-image';
 import "./ImageCard.css";
 
 const ImageCard = props => (
